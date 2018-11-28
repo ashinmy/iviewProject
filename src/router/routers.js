@@ -1,4 +1,4 @@
-import Main from '@/view/main'
+import singlePage from '@/view/main/single-page'
 import parentView from '@/components/parent-view'
 
 /**
@@ -25,7 +25,7 @@ export default [
     path: '/',
     name: '_home',
     redirect: '/home',
-    component: Main,
+    component: singlePage,
     meta: {
       hideInMenu: true,
       notCache: true
@@ -50,7 +50,7 @@ export default [
       icon: 'ios-apps',
       title: '资料管理'
     },
-    component: Main,
+    component: singlePage,
     /*children: [
       {
         path: 'user',
@@ -79,12 +79,12 @@ export default [
       icon: 'ios-stats',
       title: '授信管理'
     },
-    component: Main,
+    component: singlePage,
     children: [
-      { path: 'creditManagement',name: 'creditManagement',meta:{ title: '授信经办',  icon: 'compose'}, component: () => import('@/view/credit-management/creditManagement/creditManagement.vue') },
-      { path: 'firstTrialCredit ',name: 'firstTrialCredit',meta:{ title: '授信初审',  icon: 'arrow-swap'}, component: () => import('@/view/credit-management/firstTrialCredit/firstTrialCredit.vue') },
-      { path: 'finalTrialCredit',name: 'finalTrialCredit',meta:{ title: '授信终审',  icon: 'compose'}, component: () => import('@/view/credit-management/finalTrialCredit/finalTrialCredit.vue') },
-      { path: 'processView',name: 'processView',meta:{ title: '流程查看',  icon: 'compose'}, component: () => import('@/view/credit-management/processView/processView.vue') }
+      { path: 'creditManagement',name: 'creditManagement',component: () => import('@/view/credit-management/creditManagement/creditManagement.vue') },
+      { path: 'firstTrialCredit',name: 'firstTrialCredit', component: () => import('@/view/credit-management/firstTrialCredit/firstTrialCredit.vue') },
+      { path: 'finalTrialCredit',name: 'finalTrialCredit', component: () => import('@/view/credit-management/finalTrialCredit/finalTrialCredit.vue') },
+      { path: 'processView',name: 'processView',component: () => import('@/view/credit-management/processView/processView.vue') }
     ]
   },
   {
@@ -94,10 +94,10 @@ export default [
       icon: 'md-menu',
       title: '用信管理'
     },
-    component: Main,
+    component: singlePage,
     children: [
       { path: 'useCreditManagement',name: 'useCreditManagement',meta:{ title: '用信经办',  icon: 'compose'}, component: () => import('@/view/useCredit-management/useCreditManagement/useCreditManagement.vue') },
-      { path: 'useFirstTrialCredit ',name: 'useFirstTrialCredit',meta:{ title: '用信初审',  icon: 'arrow-swap'}, component: () => import('@/view/useCredit-management/useFirstTrialCredit/useFirstTrialCredit.vue') },
+      { path: 'useFirstTrialCredit',name: 'useFirstTrialCredit',meta:{ title: '用信初审',  icon: 'arrow-swap'}, component: () => import('@/view/useCredit-management/useFirstTrialCredit/useFirstTrialCredit.vue') },
       { path: 'useFinalTrialCredit',name: 'useFinalTrialCredit',meta:{ title: '用信终审',  icon: 'compose'}, component: () => import('@/view/useCredit-management/useFinalTrialCredit/useFinalTrialCredit.vue') },
       { path: 'useProcessView',name: 'useProcessView',meta:{ title: '流程查看',  icon: 'compose'}, component: () => import('@/view/useCredit-management/useProcessView/useProcessView.vue') }
     ]
@@ -151,7 +151,7 @@ export default [
       icon: 'md-cloud-upload',
       title: '还款管理'
     },
-    component: Main,
+    component: singlePage,
     /*children: [
       { path: 'sign-record', meta:{title: '签到管理',icon: 'arrow-move'}, name: 'sign-record', component: () => import('@/view/gps/sign-record/sign-record.vue') },
       { path: 'trajectory', meta:{title: '车辆轨迹',icon: 'edit'}, name: 'trajectory',  component: () => import('@/view/gps/trajectory/trajectory.vue') },
@@ -165,7 +165,7 @@ export default [
       icon: 'ios-infinite',
       title: '交易统计'
     },
-    component: Main,
+    component: singlePage,
     /*children: [
       { path: 'oil-enterprise-recharge', name: 'oil-enterprise-recharge',meta:{title: '油卡充值与分配',  icon: 'link'}, component: () => import('@/view/oil/oil-enterprise-recharge/oil-enterprise-recharge.vue') },
       { path: 'oil-recharge-record', name: 'oil-recharge-record',meta:{title: '油卡充值记录',  icon: 'link'}, component: () => import('@/view/oil/oil-recharge-record/oil-recharge-record.vue') },
@@ -185,7 +185,7 @@ export default [
       icon: 'ios-infinite',
       title: '报表管理'
     },
-    component: Main,
+    component: singlePage,
     /*children: [
       { path: 'channel', meta:{title: '渠道管理', icon: 'link'}, name: 'channel', component: () => import('@/view/finance/channel/channel.vue') },
       { path: 'business-type', meta:{title: '业务类型', icon: 'android-send'}, name: 'business-type',  component: () => import('@/view/finance/business-type/business-type.vue') },
@@ -202,7 +202,7 @@ export default [
       icon: 'logo-buffer',
       title: '系统设置'
     },
-    component: Main,
+    component: singlePage,
     /*children: [
       {
         path: 'count_to_page',
@@ -275,7 +275,7 @@ export default [
     meta: {
       hideInMenu: true
     },
-    component: Main,
+    component: singlePage,
     children: [
       {
         path: 'params/:id',
