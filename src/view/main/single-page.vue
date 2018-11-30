@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: 'single-page',
   data () {
@@ -98,12 +99,12 @@ export default {
           },
           {
             index:2,
-            text: '系统设置',
+            text: '授信终审',
             route: '/credit-management/finalTrialCredit',
           },
           {
             index:3,
-            text: '系统设置',
+            text: '流程查看',
             route: '/credit-management/processView',
           }
         ],
@@ -136,7 +137,10 @@ export default {
       ],
     }
   },
-  methods:{
+  methods:{/*全局的操作通过store管理*/
+    ...mapActions([
+      'handleLogOut'
+    ]),
     $goRoute:function (item) {
       this.ins = item.index;
       this.childrenIns = 0;
@@ -147,8 +151,10 @@ export default {
       this.$router.push(childrenItem.route)
     },
     userQuit:function () {
-      this.$router.push({
-        path: '/'
+      this.handleLogOut().then(() => {
+        this.$router.push({
+          name: 'login'
+        })
       })
     }
   }
